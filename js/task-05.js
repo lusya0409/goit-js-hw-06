@@ -8,7 +8,13 @@ const refs = {
 };
 refs.input.addEventListener('input', onInputValue);
 
+const defaultValue = refs.span.textContent;
+
 function onInputValue(event) {
+  if (!event.currentTarget.value) {
+    refs.span.textContent = defaultValue;
+    return;
+  }
   refs.span.textContent = event.currentTarget.value;
   //   console.dir(event.currentTarget.value);
 }
