@@ -22,7 +22,11 @@
 // Elements: 5
 const listWithId = document.querySelector('#categories');
 console.log(`Number of categories: ${listWithId.children.length}`);
+// [...listWithId.children].forEach(item => {
+//   console.log(`Category: ${item.querySelector('h2').textContent}`);
+//   console.log(`Elements: ${item.querySelectorAll('li').length}`);
+// });
 [...listWithId.children].forEach(item => {
-  console.log(`Category: ${item.querySelector('h2').textContent}`);
-  console.log(`Elements: ${item.querySelectorAll('li').length}`);
+  console.log(`Category: ${item.firstElementChild.textContent}`);
+  console.log(`Elements: ${item.lastElementChild.children.length}`);
 });
